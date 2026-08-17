@@ -1,255 +1,527 @@
 <!doctype html>
 <html lang="cs">
+
 <head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Objednávka softshellových kalhot</title>
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>
+Objednávka softshellových kalhot
+</title>
+
 
 <style>
+
 * {
-  box-sizing: border-box;
+box-sizing: border-box;
 }
+
 
 body {
-  margin: 0;
-  background: #f5f6f8;
-  color: #222;
-  font-family: Arial, sans-serif;
+
+margin: 0;
+
+background: #f5f6f8;
+
+color: #222;
+
+font-family: Arial, sans-serif;
+
 }
+
 
 .wrap {
-  max-width: 820px;
-  margin: 28px auto;
-  padding: 0 14px;
+
+max-width: 820px;
+
+margin: 28px auto;
+
+padding: 0 14px;
+
 }
+
 
 .card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 26px;
-  box-shadow: 0 4px 18px #00000012;
+
+background: #fff;
+
+border-radius: 16px;
+
+padding: 26px;
+
+box-shadow: 0 4px 18px #00000012;
+
 }
+
 
 h1 {
-  margin: 0 0 8px;
-  font-size: 27px;
+
+margin: 0 0 8px;
+
+font-size: 27px;
+
 }
+
 
 h2 {
-  font-size: 19px;
-  margin: 26px 0 10px;
-  padding-bottom: 7px;
-  border-bottom: 1px solid #e4e6e9;
+
+font-size: 19px;
+
+margin: 26px 0 10px;
+
+padding-bottom: 7px;
+
+border-bottom: 1px solid #e4e6e9;
+
 }
+
 
 .intro {
-  color: #666;
-  margin-bottom: 20px;
+
+color: #666;
+
+margin-bottom: 20px;
+
 }
+
 
 .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
+
+display: grid;
+
+grid-template-columns: 1fr 1fr;
+
+gap: 14px;
+
 }
 
+
 label {
-  display: block;
-  font-weight: 700;
-  margin: 13px 0 6px;
+
+display: block;
+
+font-weight: 700;
+
+margin: 13px 0 6px;
+
 }
+
 
 select,
 input,
 textarea {
-  width: 100%;
-  padding: 11px;
-  border: 1px solid #ccd1d8;
-  border-radius: 8px;
-  background: #fff;
-  font-size: 16px;
+
+width: 100%;
+
+padding: 11px;
+
+border: 1px solid #ccd1d8;
+
+border-radius: 8px;
+
+background: #fff;
+
+font-size: 16px;
+
 }
+
 
 .choice {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+
+display: flex;
+
+gap: 20px;
+
+flex-wrap: wrap;
+
 }
+
 
 .choice label {
-  font-weight: 400;
-  margin: 0;
+
+font-weight: 400;
+
+margin: 0;
+
 }
+
 
 .choice input {
-  width: auto;
+
+width: auto;
+
 }
+
+
+/* ============================= */
+/* BARVA + BAREVNÝ ČTVEREČEK */
+/* ============================= */
+
+.color-picker-row {
+
+display: flex;
+
+align-items: center;
+
+gap: 12px;
+
+}
+
+
+.color-picker-row select {
+
+flex: 1;
+
+}
+
+
+.color-swatch {
+
+display: inline-block;
+
+width: 40px;
+
+height: 40px;
+
+min-width: 40px;
+
+border-radius: 7px;
+
+border: 2px solid #777;
+
+box-shadow: 0 1px 5px #00000020;
+
+}
+
+
+/* ============================= */
+
 
 .help {
-  font-size: 13px;
-  color: #777;
-  margin-top: 5px;
+
+font-size: 13px;
+
+color: #777;
+
+margin-top: 5px;
+
 }
+
 
 .summary {
-  margin-top: 24px;
-  padding: 17px;
-  background: #f1f3f5;
-  border-radius: 10px;
+
+margin-top: 24px;
+
+padding: 17px;
+
+background: #f1f3f5;
+
+border-radius: 10px;
+
 }
+
 
 .row {
-  display: flex;
-  justify-content: space-between;
-  padding: 4px 0;
+
+display: flex;
+
+justify-content: space-between;
+
+padding: 4px 0;
+
 }
+
 
 .total {
-  font-size: 23px;
-  font-weight: 700;
-  border-top: 1px solid #ccc;
-  margin-top: 8px;
-  padding-top: 10px;
+
+font-size: 23px;
+
+font-weight: 700;
+
+border-top: 1px solid #ccc;
+
+margin-top: 8px;
+
+padding-top: 10px;
+
 }
+
 
 button {
-  width: 100%;
-  padding: 14px;
-  margin-top: 18px;
-  border: 0;
-  border-radius: 9px;
-  background: #222;
-  color: #fff;
-  font-size: 17px;
-  font-weight: 700;
-  cursor: pointer;
+
+width: 100%;
+
+padding: 14px;
+
+margin-top: 18px;
+
+border: 0;
+
+border-radius: 9px;
+
+background: #222;
+
+color: #fff;
+
+font-size: 17px;
+
+font-weight: 700;
+
+cursor: pointer;
+
 }
+
 
 button:disabled {
-  opacity: .6;
+
+opacity: .6;
+
 }
+
 
 #msg {
-  display: none;
-  margin-top: 15px;
-  padding: 12px;
-  border-radius: 8px;
+
+display: none;
+
+margin-top: 15px;
+
+padding: 12px;
+
+border-radius: 8px;
+
 }
+
 
 .ok {
-  background: #e7f6ea;
-  color: #176b2c;
+
+background: #e7f6ea;
+
+color: #176b2c;
+
 }
+
 
 .err {
-  background: #fdeaea;
-  color: #9b2020;
+
+background: #fdeaea;
+
+color: #9b2020;
+
 }
 
+
 @media(max-width:650px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
+
+.grid {
+
+grid-template-columns: 1fr;
+
 }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="wrap">
+
 
 <div class="card">
 
-<h1>Objednávka softshellových kalhot</h1>
+
+<h1>
+Objednávka softshellových kalhot
+</h1>
+
 
 <p class="intro">
-Vyplňte prosím jednotlivé části objednávky. Cena se přepočítává automaticky.
+
+Vyplňte prosím jednotlivé části objednávky.
+Cena se přepočítává automaticky.
+
 </p>
 
 
-<!-- 1. PRO KOHO -->
 
-<h2>1. Pro koho jsou kalhoty</h2>
+<!-- ================================= -->
+<!-- 1 -->
+<!-- ================================= -->
+
+
+<h2>
+1. Pro koho jsou kalhoty
+</h2>
+
 
 <div class="choice">
 
-<label>
-<input type="radio" name="sex" value="Kluk" checked>
-Kluk
-</label>
 
 <label>
-<input type="radio" name="sex" value="Holka">
-Holka
+
+<input
+type="radio"
+name="sex"
+value="Kluk"
+checked
+>
+
+Kluk
+
 </label>
+
+
+<label>
+
+<input
+type="radio"
+name="sex"
+value="Holka"
+>
+
+Holka
+
+</label>
+
 
 </div>
 
 
-<!-- 2. VELIKOST -->
 
-<h2>2. Velikost a množství</h2>
+<!-- ================================= -->
+<!-- 2 -->
+<!-- ================================= -->
+
+
+<h2>
+2. Velikost a množství
+</h2>
+
 
 <div class="grid">
 
+
 <div>
+
 
 <label for="size">
 Velikost
 </label>
 
+
 <select id="size">
 
-<option value="86" data-price="490">
+
+<option
+value="86"
+data-price="490">
+
 86 – 490 Kč
+
 </option>
 
-<option value="92" data-price="490">
+
+<option
+value="92"
+data-price="490">
+
 92 – 490 Kč
+
 </option>
 
-<option value="98" data-price="490">
+
+<option
+value="98"
+data-price="490">
+
 98 – 490 Kč
+
 </option>
 
-<option value="104" data-price="540">
+
+<option
+value="104"
+data-price="540">
+
 104 – 540 Kč
+
 </option>
 
-<option value="110" data-price="540">
+
+<option
+value="110"
+data-price="540">
+
 110 – 540 Kč
+
 </option>
 
-<option value="116" data-price="540">
+
+<option
+value="116"
+data-price="540">
+
 116 – 540 Kč
+
 </option>
 
-<option value="122" data-price="580">
+
+<option
+value="122"
+data-price="580">
+
 122 – 580 Kč
+
 </option>
 
-<option value="128" data-price="580">
+
+<option
+value="128"
+data-price="580">
+
 128 – 580 Kč
+
 </option>
 
-<option value="134" data-price="580">
+
+<option
+value="134"
+data-price="580">
+
 134 – 580 Kč
+
 </option>
 
-<option value="140" data-price="600">
+
+<option
+value="140"
+data-price="600">
+
 140 – 600 Kč
+
 </option>
+
 
 </select>
+
 
 </div>
 
 
 <div>
 
+
 <label for="qty">
 Počet kusů
 </label>
+
 
 <input
 id="qty"
@@ -259,206 +531,406 @@ step="1"
 value="1"
 >
 
-</div>
 
 </div>
 
 
-<!-- 3. VARIANTA -->
+</div>
 
-<h2>3. Varianta kalhot</h2>
+
+
+<!-- ================================= -->
+<!-- 3 -->
+<!-- ================================= -->
+
+
+<h2>
+3. Varianta kalhot
+</h2>
+
 
 <select id="variant">
+
 
 <option>
 Kolena + kapsy
 </option>
 
+
 <option>
 Kapsy
 </option>
+
 
 <option>
 Kolena
 </option>
 
+
 <option>
 Jednoduché – bez kolen a kapes
 </option>
 
+
 </select>
 
+
 <div class="help">
+
 Varianta je bez příplatku.
+
 </div>
 
 
-<!-- 4. BARVA -->
 
-<h2>4. Základní barva</h2>
+<!-- ================================= -->
+<!-- 4 -->
+<!-- ================================= -->
+
+
+<h2>
+4. Základní barva
+</h2>
+
+
+<div class="color-picker-row">
+
 
 <select id="baseColor">
 
-<option>Černá</option>
-<option>Růžová</option>
-<option>Modrá</option>
-<option>Šedá</option>
-<option>Zelená</option>
-<option>Jiná / doplnit v poznámce</option>
+
+<option
+value="Červená"
+data-color="#e53935">
+
+Červená
+
+</option>
+
+
+<option
+value="Modrá"
+data-color="#1e88e5">
+
+Modrá
+
+</option>
+
+
+<option
+value="Černá"
+data-color="#111111"
+selected>
+
+Černá
+
+</option>
+
+
+<option
+value="Zelená"
+data-color="#43a047">
+
+Zelená
+
+</option>
+
+
+<option
+value="Žlutá"
+data-color="#fdd835">
+
+Žlutá
+
+</option>
+
 
 </select>
 
-<div class="help">
-Výběr barvy je bez příplatku.
+
+<span
+id="baseColorSwatch"
+class="color-swatch"
+title="Ukázka vybrané barvy">
+</span>
+
+
 </div>
 
 
-<!-- 5. NÁPLET -->
+<div class="help">
 
-<h2>5. Barva nápletu – pas a nohavice</h2>
+Výběr barvy je bez příplatku.
+Barevný čtvereček ukazuje právě zvolenou barvu.
+
+</div>
+
+
+
+<!-- ================================= -->
+<!-- 5 -->
+<!-- ================================= -->
+
+
+<h2>
+5. Barva nápletu – pas a nohavice
+</h2>
+
 
 <select id="cuffColor">
 
-<option>Černá</option>
-<option>Růžová</option>
-<option>Modrá</option>
-<option>Šedá</option>
-<option>Zelená</option>
-<option>Jiná / doplnit v poznámce</option>
+
+<option>
+Černá
+</option>
+
+
+<option>
+Červená
+</option>
+
+
+<option>
+Modrá
+</option>
+
+
+<option>
+Zelená
+</option>
+
+
+<option>
+Žlutá
+</option>
+
 
 </select>
 
+
 <div class="help">
+
 Bez příplatku.
+
 </div>
 
 
-<!-- 6. VZOR -->
 
-<h2>6. Vzor kolen a kapes</h2>
+<!-- ================================= -->
+<!-- 6 -->
+<!-- ================================= -->
+
+
+<h2>
+6. Vzor kolen a kapes
+</h2>
+
 
 <select id="pattern">
+
 
 <option>
 Bez konkrétního vzoru / dle domluvy
 </option>
 
+
 <option>
 Vzor 1 – doplnit
 </option>
+
 
 <option>
 Vzor 2 – doplnit
 </option>
 
+
 <option>
 Vzor 3 – doplnit
 </option>
 
+
 </select>
 
+
 <div class="help">
+
 Vzor je bez příplatku.
+
 </div>
 
 
-<!-- 7. REFLEX -->
 
-<h2>7. Reflexní prvky</h2>
+<!-- ================================= -->
+<!-- 7 -->
+<!-- ================================= -->
+
+
+<h2>
+7. Reflexní prvky
+</h2>
+
 
 <select id="reflective">
 
+
 <option value="0">
-Bez reflexních prvků
+
+Bez reflexního prvku – 0 Kč
+
 </option>
 
-<option value="30">
-Kapsa + nohavice (+30 Kč / kus)
+
+<option value="120">
+
+Kapsa + nohavice – 120 Kč
+
 </option>
 
-<option value="30">
-Kapsa (+30 Kč / kus)
+
+<option value="60">
+
+Kapsa – 60 Kč
+
 </option>
 
-<option value="30">
-Nohavice (+30 Kč / kus)
+
+<option value="60">
+
+Nohavice – 60 Kč
+
 </option>
 
+
 <option value="30">
-Jedna noha (+30 Kč / kus)
+
+Jedna noha – 30 Kč
+
 </option>
+
 
 </select>
 
+
 <div class="help">
-Příplatek 30 Kč za kus u zvolené varianty.
+
+Kapsa = 2 × 30 Kč = 60 Kč.
+Nohavice = 2 × 30 Kč = 60 Kč.
+Kapsa + nohavice = 4 × 30 Kč = 120 Kč.
+Jedna noha = 30 Kč.
+
 </div>
 
 
-<!-- 8. SEZONA -->
 
-<h2>8. Materiál / sezóna</h2>
+<!-- ================================= -->
+<!-- 8 -->
+<!-- ================================= -->
+
+
+<h2>
+8. Materiál / sezóna
+</h2>
+
 
 <div class="choice">
 
+
 <label>
+
 <input
 type="radio"
 name="season"
 value="Jarní"
 checked
 >
+
 Jarní
+
 </label>
 
+
 <label>
+
 <input
 type="radio"
 name="season"
 value="Zimní"
 >
+
 Zimní
+
 </label>
 
+
 </div>
+
 
 <div class="help">
+
 Bez příplatku.
+
 </div>
 
 
-<!-- 9. DORUCENI -->
 
-<h2>9. Doručení</h2>
+<!-- ================================= -->
+<!-- 9 -->
+<!-- ================================= -->
+
+
+<h2>
+9. Doručení
+</h2>
+
 
 <select id="delivery">
 
+
 <option value="89">
+
 Zásilkovna – 89 Kč
+
 </option>
 
+
 <option value="0">
+
 Osobně – zdarma
+
 </option>
+
 
 </select>
 
+
 <div class="help">
+
 U osobního převzetí mohou zákazníci přijít osobně.
+
 </div>
 
 
-<!-- 10. KONTAKT -->
 
-<h2>10. Kontaktní údaje</h2>
+<!-- ================================= -->
+<!-- 10 -->
+<!-- ================================= -->
+
+
+<h2>
+10. Kontaktní údaje
+</h2>
+
 
 <div class="grid">
 
+
 <div>
+
 
 <label for="name">
 Jméno a příjmení *
 </label>
+
 
 <input
 id="name"
@@ -466,14 +938,17 @@ autocomplete="name"
 required
 >
 
+
 </div>
 
 
 <div>
 
+
 <label for="phone">
 Telefon *
 </label>
+
 
 <input
 id="phone"
@@ -482,7 +957,9 @@ autocomplete="tel"
 required
 >
 
+
 </div>
+
 
 </div>
 
@@ -490,6 +967,7 @@ required
 <label for="email">
 E-mail *
 </label>
+
 
 <input
 id="email"
@@ -499,9 +977,16 @@ required
 >
 
 
-<!-- 11. POZNAMKA -->
 
-<h2>11. Poznámky a speciální úpravy</h2>
+<!-- ================================= -->
+<!-- 11 -->
+<!-- ================================= -->
+
+
+<h2>
+11. Poznámky a speciální úpravy
+</h2>
+
 
 <textarea
 id="note"
@@ -510,9 +995,14 @@ placeholder="Speciální úpravy, požadavky, místo osobního převzetí apod."
 ></textarea>
 
 
+
+<!-- ================================= -->
 <!-- CENA -->
+<!-- ================================= -->
+
 
 <div class="summary">
+
 
 <div class="row">
 
@@ -565,121 +1055,198 @@ CELKEM
 
 </div>
 
+
 </div>
 
 
 <button id="send">
+
 Odeslat objednávku
+
 </button>
+
 
 <div id="msg"></div>
 
+
 </div>
 
 </div>
+
 
 
 <script>
 
+
 /*
-==========================================================
-TADY JE TVOJE GOOGLE APPS SCRIPT URL
-==========================================================
+==================================================
+GOOGLE APPS SCRIPT
+==================================================
 */
 
 const SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbzxKdwEplnIPizQsd3gBtGvZx-4xyNzBtwcNbeGAIRC7wCnPjcYEMNwceLbty57_12W/exec";
 
 
+
 /*
-==========================================================
-VÝPOČET CENY
-==========================================================
+==================================================
+RADIO BUTTON
+==================================================
 */
 
 function selectedRadio(name) {
 
-  return document.querySelector(
-    'input[name="' + name + '"]:checked'
-  ).value;
+return document.querySelector(
+'input[name="' + name + '"]:checked'
+).value;
 
 }
 
-
-function calculate() {
-
-  const sizeSelect =
-    document.getElementById("size");
-
-  const selectedSize =
-    sizeSelect.selectedOptions[0];
-
-  const basePrice =
-    Number(selectedSize.dataset.price);
-
-  const reflectivePrice =
-    Number(
-      document.getElementById("reflective").value
-    );
-
-  const quantity =
-    Math.max(
-      1,
-      Number(
-        document.getElementById("qty").value
-      ) || 1
-    );
-
-  const shipping =
-    Number(
-      document.getElementById("delivery").value
-    );
-
-  const unitPrice =
-    basePrice + reflectivePrice;
-
-  const total =
-    unitPrice * quantity + shipping;
-
-
-  document.getElementById("unit").textContent =
-    unitPrice.toLocaleString("cs-CZ") + " Kč";
-
-
-  document.getElementById("qtySummary").textContent =
-    quantity;
-
-
-  document.getElementById("shipping").textContent =
-    shipping.toLocaleString("cs-CZ") + " Kč";
-
-
-  document.getElementById("total").textContent =
-    total.toLocaleString("cs-CZ") + " Kč";
-
-}
 
 
 /*
-==========================================================
-AKTUALIZACE CENY PŘI ZMĚNĚ ÚDAJŮ
-==========================================================
+==================================================
+VÝPOČET CENY
+==================================================
+*/
+
+function calculate() {
+
+
+const size =
+document.getElementById("size");
+
+
+const selectedSize =
+size.selectedOptions[0];
+
+
+const basePrice =
+Number(selectedSize.dataset.price);
+
+
+const reflectivePrice =
+Number(
+document.getElementById("reflective").value
+);
+
+
+const quantity =
+Math.max(
+1,
+Number(
+document.getElementById("qty").value
+) || 1
+);
+
+
+const shipping =
+Number(
+document.getElementById("delivery").value
+);
+
+
+const unitPrice =
+basePrice + reflectivePrice;
+
+
+const total =
+unitPrice * quantity + shipping;
+
+
+
+document.getElementById("unit").textContent =
+unitPrice.toLocaleString("cs-CZ") + " Kč";
+
+
+document.getElementById("qtySummary").textContent =
+quantity;
+
+
+document.getElementById("shipping").textContent =
+shipping.toLocaleString("cs-CZ") + " Kč";
+
+
+document.getElementById("total").textContent =
+total.toLocaleString("cs-CZ") + " Kč";
+
+}
+
+
+
+/*
+==================================================
+BAREVNÝ ČTVEREČEK
+==================================================
+*/
+
+function updateBaseColorSwatch() {
+
+
+const select =
+document.getElementById("baseColor");
+
+
+const selected =
+select.selectedOptions[0];
+
+
+const color =
+selected.dataset.color;
+
+
+const swatch =
+document.getElementById("baseColorSwatch");
+
+
+swatch.style.backgroundColor =
+color;
+
+}
+
+
+
+document
+.getElementById("baseColor")
+.addEventListener(
+"change",
+updateBaseColorSwatch
+);
+
+
+updateBaseColorSwatch();
+
+
+
+/*
+==================================================
+AKTUALIZACE CENY
+==================================================
 */
 
 [
-  "size",
-  "qty",
-  "reflective",
-  "delivery"
+"size",
+"qty",
+"reflective",
+"delivery"
 ].forEach(function(id) {
 
-  document
-    .getElementById(id)
-    .addEventListener("input", calculate);
 
-  document
-    .getElementById(id)
-    .addEventListener("change", calculate);
+document
+.getElementById(id)
+.addEventListener(
+"input",
+calculate
+);
+
+
+document
+.getElementById(id)
+.addEventListener(
+"change",
+calculate
+);
 
 });
 
@@ -687,249 +1254,326 @@ AKTUALIZACE CENY PŘI ZMĚNĚ ÚDAJŮ
 calculate();
 
 
+
 /*
-==========================================================
+==================================================
 ODESLÁNÍ OBJEDNÁVKY
-==========================================================
+==================================================
 */
 
 document
 .getElementById("send")
-.addEventListener("click", async function() {
+.addEventListener(
+"click",
+async function() {
 
 
-  const msg =
-    document.getElementById("msg");
+const msg =
+document.getElementById("msg");
 
 
-  msg.style.display = "none";
+msg.style.display =
+"none";
 
 
-  /*
-  Kontrola kontaktních údajů
-  */
 
-  const name =
-    document.getElementById("name")
-    .value
-    .trim();
+/*
+KONTAKT
+*/
 
 
-  const phone =
-    document.getElementById("phone")
-    .value
-    .trim();
+const name =
+document
+.getElementById("name")
+.value
+.trim();
 
 
-  const email =
-    document.getElementById("email")
-    .value
-    .trim();
+const phone =
+document
+.getElementById("phone")
+.value
+.trim();
 
 
-  if (!name || !phone || !email) {
+const email =
+document
+.getElementById("email")
+.value
+.trim();
 
-    msg.className = "err";
 
-    msg.textContent =
-      "Vyplňte prosím jméno, telefon a e-mail.";
 
-    msg.style.display = "block";
+if (
+!name ||
+!phone ||
+!email
+) {
 
-    return;
 
-  }
+msg.className =
+"err";
 
 
-  /*
-  Zjištění ceny
-  */
+msg.textContent =
+"Vyplňte prosím jméno, telefon a e-mail.";
 
-  const sizeSelect =
-    document.getElementById("size");
 
-  const selectedSize =
-    sizeSelect.selectedOptions[0];
+msg.style.display =
+"block";
 
 
-  const basePrice =
-    Number(selectedSize.dataset.price);
+return;
 
+}
 
-  const reflectivePrice =
-    Number(
-      document.getElementById("reflective").value
-    );
 
 
-  const quantity =
-    Math.max(
-      1,
-      Number(
-        document.getElementById("qty").value
-      ) || 1
-    );
+/*
+CENA
+*/
 
 
-  const shipping =
-    Number(
-      document.getElementById("delivery").value
-    );
+const size =
+document.getElementById("size");
 
 
-  const unitPrice =
-    basePrice + reflectivePrice;
+const selectedSize =
+size.selectedOptions[0];
 
 
-  const total =
-    unitPrice * quantity + shipping;
+const basePrice =
+Number(
+selectedSize.dataset.price
+);
 
 
-  /*
-  Sestavení objednávky
-  */
+const reflectivePrice =
+Number(
+document.getElementById("reflective").value
+);
 
-  const data = {
 
-    sex:
-      selectedRadio("sex"),
+const quantity =
+Math.max(
+1,
+Number(
+document.getElementById("qty").value
+) || 1
+);
 
-    size:
-      selectedSize.value,
 
-    basePrice:
-      basePrice,
+const shipping =
+Number(
+document.getElementById("delivery").value
+);
 
-    variant:
-      document
-      .getElementById("variant")
-      .value,
 
-    baseColor:
-      document
-      .getElementById("baseColor")
-      .value,
+const unitPrice =
+basePrice +
+reflectivePrice;
 
-    cuffColor:
-      document
-      .getElementById("cuffColor")
-      .value,
 
-    pattern:
-      document
-      .getElementById("pattern")
-      .value,
+const total =
+unitPrice *
+quantity +
+shipping;
 
-    reflective:
-      document
-      .getElementById("reflective")
-      .selectedOptions[0]
-      .text,
 
-    reflectivePrice:
-      reflectivePrice,
 
-    season:
-      selectedRadio("season"),
+/*
+DATA OBJEDNÁVKY
+*/
 
-    delivery:
-      document
-      .getElementById("delivery")
-      .selectedOptions[0]
-      .text,
 
-    shipping:
-      shipping,
+const data = {
 
-    quantity:
-      quantity,
 
-    unitPrice:
-      unitPrice,
+sex:
+selectedRadio("sex"),
 
-    total:
-      total,
 
-    name:
-      name,
+size:
+selectedSize.value,
 
-    phone:
-      phone,
 
-    email:
-      email,
+basePrice:
+basePrice,
 
-    note:
-      document
-      .getElementById("note")
-      .value
-      .trim()
 
-  };
+variant:
+document
+.getElementById("variant")
+.value,
 
 
-  /*
-  Odeslání
-  */
+baseColor:
+document
+.getElementById("baseColor")
+.value,
 
-  const button =
-    document.getElementById("send");
 
+cuffColor:
+document
+.getElementById("cuffColor")
+.value,
 
-  button.disabled = true;
 
-  button.textContent =
-    "Odesílám…";
+pattern:
+document
+.getElementById("pattern")
+.value,
 
 
-  try {
+reflective:
+document
+.getElementById("reflective")
+.selectedOptions[0]
+.text,
 
-    await fetch(
-      SCRIPT_URL,
-      {
-        method: "POST",
 
-        mode: "no-cors",
+reflectivePrice:
+reflectivePrice,
 
-        headers: {
-          "Content-Type":
-            "text/plain;charset=utf-8"
-        },
 
-        body:
-          JSON.stringify(data)
-      }
-    );
+season:
+selectedRadio("season"),
 
 
-    msg.className = "ok";
+delivery:
+document
+.getElementById("delivery")
+.selectedOptions[0]
+.text,
 
-    msg.textContent =
-      "Objednávka byla odeslána. Děkujeme!";
 
-    msg.style.display = "block";
+shipping:
+shipping,
 
 
-  } catch (error) {
+quantity:
+quantity,
 
-    msg.className = "err";
 
-    msg.textContent =
-      "Objednávku se nepodařilo odeslat. Zkuste to prosím znovu.";
+unitPrice:
+unitPrice,
 
-    msg.style.display = "block";
 
-  }
+total:
+total,
 
 
-  button.disabled = false;
+name:
+name,
 
-  button.textContent =
-    "Odeslat objednávku";
+
+phone:
+phone,
+
+
+email:
+email,
+
+
+note:
+document
+.getElementById("note")
+.value
+.trim()
+
+};
+
+
+
+/*
+ODESLÁNÍ
+*/
+
+
+const button =
+document.getElementById("send");
+
+
+button.disabled =
+true;
+
+
+button.textContent =
+"Odesílám…";
+
+
+
+try {
+
+
+await fetch(
+SCRIPT_URL,
+{
+
+method:
+"POST",
+
+mode:
+"no-cors",
+
+headers:
+{
+"Content-Type":
+"text/plain;charset=utf-8"
+},
+
+body:
+JSON.stringify(data)
+
+}
+);
+
+
+msg.className =
+"ok";
+
+
+msg.textContent =
+"Objednávka byla odeslána. Děkujeme!";
+
+
+msg.style.display =
+"block";
+
+
+}
+
+
+catch(error) {
+
+
+msg.className =
+"err";
+
+
+msg.textContent =
+"Objednávku se nepodařilo odeslat. Zkuste to prosím znovu.";
+
+
+msg.style.display =
+"block";
+
+}
+
+
+button.disabled =
+false;
+
+
+button.textContent =
+"Odeslat objednávku";
+
 
 });
 
 </script>
 
+
 </body>
+
 </html>
