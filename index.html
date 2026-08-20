@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 
 <meta name="viewport"
-content="width=device-width, initial-scale=1">
+      content="width=device-width, initial-scale=1">
 
 <title>
 Objednávka softshellových kalhot
@@ -15,311 +15,317 @@ Objednávka softshellových kalhot
 
 <style>
 
+/* =====================================================
+   ZÁKLAD
+   ===================================================== */
+
 * {
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 
 body {
-
-margin: 0;
-
-background: #f5f6f8;
-
-color: #222;
-
-font-family: Arial, sans-serif;
-
+  margin: 0;
+  background: #f5f6f8;
+  color: #222;
+  font-family: Arial, sans-serif;
 }
 
 
 .wrap {
-
-max-width: 820px;
-
-margin: 28px auto;
-
-padding: 0 14px;
-
+  max-width: 850px;
+  margin: 28px auto;
+  padding: 0 14px;
 }
 
 
 .card {
-
-background: #fff;
-
-border-radius: 16px;
-
-padding: 26px;
-
-box-shadow: 0 4px 18px #00000012;
-
+  background: #fff;
+  border-radius: 16px;
+  padding: 26px;
+  box-shadow: 0 4px 18px #00000012;
 }
 
 
 h1 {
-
-margin: 0 0 8px;
-
-font-size: 27px;
-
+  margin: 0 0 8px;
+  font-size: 27px;
 }
 
 
 h2 {
-
-font-size: 19px;
-
-margin: 26px 0 10px;
-
-padding-bottom: 7px;
-
-border-bottom: 1px solid #e4e6e9;
-
+  font-size: 19px;
+  margin: 26px 0 10px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #e4e6e9;
 }
 
 
 .intro {
-
-color: #666;
-
-margin-bottom: 20px;
-
+  color: #666;
+  margin-bottom: 20px;
 }
 
 
+/* =====================================================
+   FORMULÁŘ
+   ===================================================== */
+
 .grid {
-
-display: grid;
-
-grid-template-columns: 1fr 1fr;
-
-gap: 14px;
-
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
 }
 
 
 label {
-
-display: block;
-
-font-weight: 700;
-
-margin: 13px 0 6px;
-
+  display: block;
+  font-weight: 700;
+  margin: 13px 0 6px;
 }
 
 
 select,
 input,
 textarea {
-
-width: 100%;
-
-padding: 11px;
-
-border: 1px solid #ccd1d8;
-
-border-radius: 8px;
-
-background: #fff;
-
-font-size: 16px;
-
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #ccd1d8;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 16px;
 }
 
 
 .choice {
-
-display: flex;
-
-gap: 20px;
-
-flex-wrap: wrap;
-
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 
 .choice label {
-
-font-weight: 400;
-
-margin: 0;
-
+  font-weight: 400;
+  margin: 0;
 }
 
 
 .choice input {
-
-width: auto;
-
+  width: auto;
 }
 
 
-/* ============================= */
-/* BARVA + BAREVNÝ ČTVEREČEK */
-/* ============================= */
+.help {
+  font-size: 13px;
+  color: #777;
+  margin-top: 5px;
+}
+
+
+/* =====================================================
+   ZÁKLADNÍ BARVA
+   ===================================================== */
 
 .color-picker-row {
-
-display: flex;
-
-align-items: center;
-
-gap: 12px;
-
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 
 .color-picker-row select {
-
-flex: 1;
-
+  flex: 1;
 }
 
 
 .color-swatch {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
 
-display: inline-block;
+  border-radius: 8px;
 
-width: 40px;
+  border: 2px solid #777;
 
-height: 40px;
-
-min-width: 40px;
-
-border-radius: 7px;
-
-border: 2px solid #777;
-
-box-shadow: 0 1px 5px #00000020;
-
+  box-shadow:
+    0 2px 6px #00000020;
 }
 
 
-/* ============================= */
+/* =====================================================
+   VÝBĚR VZORU
+   ===================================================== */
 
+.pattern-box {
+  margin-top: 12px;
 
-.help {
+  padding: 14px;
 
-font-size: 13px;
+  border: 1px solid #ddd;
 
-color: #777;
+  border-radius: 12px;
 
-margin-top: 5px;
-
+  background: #fafafa;
 }
 
+
+.pattern-preview {
+  display: none;
+
+  margin-top: 15px;
+
+  border: 2px solid #222;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  background: white;
+}
+
+
+.pattern-preview img {
+  display: block;
+
+  width: 100%;
+
+  max-height: 280px;
+
+  object-fit: cover;
+}
+
+
+.pattern-preview-name {
+  padding: 10px;
+
+  text-align: center;
+
+  font-weight: 700;
+
+  background: #f1f3f5;
+}
+
+
+.no-patterns {
+  padding: 14px;
+
+  background: #fff4e5;
+
+  border: 1px solid #f0c36d;
+
+  border-radius: 8px;
+
+  color: #76510b;
+}
+
+
+/* =====================================================
+   CENA
+   ===================================================== */
 
 .summary {
+  margin-top: 24px;
 
-margin-top: 24px;
+  padding: 17px;
 
-padding: 17px;
+  background: #f1f3f5;
 
-background: #f1f3f5;
-
-border-radius: 10px;
-
+  border-radius: 10px;
 }
 
 
 .row {
+  display: flex;
 
-display: flex;
+  justify-content: space-between;
 
-justify-content: space-between;
-
-padding: 4px 0;
-
+  padding: 4px 0;
 }
 
 
 .total {
+  font-size: 23px;
 
-font-size: 23px;
+  font-weight: 700;
 
-font-weight: 700;
+  border-top: 1px solid #ccc;
 
-border-top: 1px solid #ccc;
+  margin-top: 8px;
 
-margin-top: 8px;
-
-padding-top: 10px;
-
+  padding-top: 10px;
 }
 
 
+/* =====================================================
+   TLAČÍTKO
+   ===================================================== */
+
 button {
+  width: 100%;
 
-width: 100%;
+  padding: 14px;
 
-padding: 14px;
+  margin-top: 18px;
 
-margin-top: 18px;
+  border: 0;
 
-border: 0;
+  border-radius: 9px;
 
-border-radius: 9px;
+  background: #222;
 
-background: #222;
+  color: #fff;
 
-color: #fff;
+  font-size: 17px;
 
-font-size: 17px;
+  font-weight: 700;
 
-font-weight: 700;
-
-cursor: pointer;
-
+  cursor: pointer;
 }
 
 
 button:disabled {
-
-opacity: .6;
-
+  opacity: .6;
 }
 
 
+/* =====================================================
+   ZPRÁVA
+   ===================================================== */
+
 #msg {
+  display: none;
 
-display: none;
+  margin-top: 15px;
 
-margin-top: 15px;
+  padding: 12px;
 
-padding: 12px;
-
-border-radius: 8px;
-
+  border-radius: 8px;
 }
 
 
 .ok {
+  background: #e7f6ea;
 
-background: #e7f6ea;
-
-color: #176b2c;
-
+  color: #176b2c;
 }
 
 
 .err {
+  background: #fdeaea;
 
-background: #fdeaea;
-
-color: #9b2020;
-
+  color: #9b2020;
 }
 
+
+/* =====================================================
+   MOBIL
+   ===================================================== */
 
 @media(max-width:650px) {
 
-.grid {
-
-grid-template-columns: 1fr;
-
-}
+  .grid {
+    grid-template-columns: 1fr;
+  }
 
 }
 
@@ -333,7 +339,6 @@ grid-template-columns: 1fr;
 
 <div class="wrap">
 
-
 <div class="card">
 
 
@@ -343,18 +348,15 @@ Objednávka softshellových kalhot
 
 
 <p class="intro">
-
 Vyplňte prosím jednotlivé části objednávky.
 Cena se přepočítává automaticky.
-
 </p>
 
 
 
-<!-- ================================= -->
-<!-- 1 -->
-<!-- ================================= -->
-
+<!-- =====================================================
+     1. POHLAVÍ
+     ===================================================== -->
 
 <h2>
 1. Pro koho jsou kalhoty
@@ -367,10 +369,10 @@ Cena se přepočítává automaticky.
 <label>
 
 <input
-type="radio"
-name="sex"
-value="Kluk"
-checked
+  type="radio"
+  name="sex"
+  value="Kluk"
+  checked
 >
 
 Kluk
@@ -381,9 +383,9 @@ Kluk
 <label>
 
 <input
-type="radio"
-name="sex"
-value="Holka"
+  type="radio"
+  name="sex"
+  value="Holka"
 >
 
 Holka
@@ -395,10 +397,9 @@ Holka
 
 
 
-<!-- ================================= -->
-<!-- 2 -->
-<!-- ================================= -->
-
+<!-- =====================================================
+     2. VELIKOST
+     ===================================================== -->
 
 <h2>
 2. Velikost a množství
@@ -410,7 +411,6 @@ Holka
 
 <div>
 
-
 <label for="size">
 Velikost
 </label>
@@ -418,120 +418,65 @@ Velikost
 
 <select id="size">
 
-
-<option
-value="86"
-data-price="490">
-
+<option value="86" data-price="490">
 86 – 490 Kč
-
 </option>
 
-
-<option
-value="92"
-data-price="490">
-
+<option value="92" data-price="490">
 92 – 490 Kč
-
 </option>
 
-
-<option
-value="98"
-data-price="490">
-
+<option value="98" data-price="490">
 98 – 490 Kč
-
 </option>
 
-
-<option
-value="104"
-data-price="540">
-
+<option value="104" data-price="540">
 104 – 540 Kč
-
 </option>
 
-
-<option
-value="110"
-data-price="540">
-
+<option value="110" data-price="540">
 110 – 540 Kč
-
 </option>
 
-
-<option
-value="116"
-data-price="540">
-
+<option value="116" data-price="540">
 116 – 540 Kč
-
 </option>
 
-
-<option
-value="122"
-data-price="580">
-
+<option value="122" data-price="580">
 122 – 580 Kč
-
 </option>
 
-
-<option
-value="128"
-data-price="580">
-
+<option value="128" data-price="580">
 128 – 580 Kč
-
 </option>
 
-
-<option
-value="134"
-data-price="580">
-
+<option value="134" data-price="580">
 134 – 580 Kč
-
 </option>
 
-
-<option
-value="140"
-data-price="600">
-
+<option value="140" data-price="600">
 140 – 600 Kč
-
 </option>
-
 
 </select>
-
 
 </div>
 
 
 <div>
 
-
 <label for="qty">
 Počet kusů
 </label>
 
-
 <input
-id="qty"
-type="number"
-min="1"
-step="1"
-value="1"
+  id="qty"
+  type="number"
+  min="1"
+  step="1"
+  value="1"
 >
 
-
 </div>
 
 
@@ -539,10 +484,9 @@ value="1"
 
 
 
-<!-- ================================= -->
-<!-- 3 -->
-<!-- ================================= -->
-
+<!-- =====================================================
+     3. VARIANTA
+     ===================================================== -->
 
 <h2>
 3. Varianta kalhot
@@ -551,42 +495,34 @@ value="1"
 
 <select id="variant">
 
-
 <option>
 Kolena + kapsy
 </option>
-
 
 <option>
 Kapsy
 </option>
 
-
 <option>
 Kolena
 </option>
-
 
 <option>
 Jednoduché – bez kolen a kapes
 </option>
 
-
 </select>
 
 
 <div class="help">
-
 Varianta je bez příplatku.
-
 </div>
 
 
 
-<!-- ================================= -->
-<!-- 4 -->
-<!-- ================================= -->
-
+<!-- =====================================================
+     4. ZÁKLADNÍ BARVA
+     ===================================================== -->
 
 <h2>
 4. Základní barva
@@ -600,48 +536,66 @@ Varianta je bez příplatku.
 
 
 <option
-value="Červená"
-data-color="#e53935">
-
-Červená
-
-</option>
-
-
-<option
-value="Modrá"
-data-color="#1e88e5">
-
-Modrá
-
-</option>
-
-
-<option
-value="Černá"
-data-color="#111111"
-selected>
-
+  value="Černá"
+  data-color="#111111"
+  selected>
 Černá
-
 </option>
 
 
 <option
-value="Zelená"
-data-color="#43a047">
-
-Zelená
-
+  value="Lila"
+  data-color="#a83d88">
+Lila
 </option>
 
 
 <option
-value="Žlutá"
-data-color="#fdd835">
+  value="Modrá Jeans"
+  data-color="#294b86">
+Modrá Jeans
+</option>
 
-Žlutá
 
+<option
+  value="Petrolejová"
+  data-color="#28727d">
+Petrolejová
+</option>
+
+
+<option
+  value="Šedá"
+  data-color="#6d7177">
+Šedá
+</option>
+
+
+<option
+  value="Šeříková tmavá"
+  data-color="#70466e">
+Šeříková tmavá
+</option>
+
+
+<option
+  value="Temná modrá"
+  data-color="#202d49">
+Temná modrá
+</option>
+
+
+<option
+  value="Tmavý karamel"
+  data-color="#9b5d32">
+Tmavý karamel
+</option>
+
+
+<option
+  value="Vínová"
+  data-color="#7b2936">
+Vínová
 </option>
 
 
@@ -649,9 +603,9 @@ data-color="#fdd835">
 
 
 <span
-id="baseColorSwatch"
-class="color-swatch"
-title="Ukázka vybrané barvy">
+  id="baseColorSwatch"
+  class="color-swatch"
+  title="Ukázka vybrané barvy">
 </span>
 
 
@@ -661,109 +615,158 @@ title="Ukázka vybrané barvy">
 <div class="help">
 
 Výběr barvy je bez příplatku.
-Barevný čtvereček ukazuje právě zvolenou barvu.
+Čtvereček ukazuje právě vybranou barvu.
 
 </div>
 
 
 
-<!-- ================================= -->
-<!-- 5 -->
-<!-- ================================= -->
-
+<!-- =====================================================
+     5. NÁPLET
+     ===================================================== -->
 
 <h2>
 5. Barva nápletu – pas a nohavice
 </h2>
 
 
+<div class="color-picker-row">
+
+
 <select id="cuffColor">
 
-
-<option>
+<option
+  value="Černá"
+  data-color="#111111"
+  selected>
 Černá
 </option>
 
 
-<option>
-Červená
+<option
+  value="Lila"
+  data-color="#a83d88">
+Lila
 </option>
 
 
-<option>
-Modrá
+<option
+  value="Modrá Jeans"
+  data-color="#294b86">
+Modrá Jeans
 </option>
 
 
-<option>
-Zelená
+<option
+  value="Petrolejová"
+  data-color="#28727d">
+Petrolejová
 </option>
 
 
-<option>
-Žlutá
+<option
+  value="Šedá"
+  data-color="#6d7177">
+Šedá
+</option>
+
+
+<option
+  value="Šeříková tmavá"
+  data-color="#70466e">
+Šeříková tmavá
+</option>
+
+
+<option
+  value="Temná modrá"
+  data-color="#202d49">
+Temná modrá
+</option>
+
+
+<option
+  value="Tmavý karamel"
+  data-color="#9b5d32">
+Tmavý karamel
+</option>
+
+
+<option
+  value="Vínová"
+  data-color="#7b2936">
+Vínová
 </option>
 
 
 </select>
 
 
-<div class="help">
+<span
+  id="cuffColorSwatch"
+  class="color-swatch"
+  title="Ukázka vybrané barvy">
+</span>
 
-Bez příplatku.
 
 </div>
 
 
+<div class="help">
+Bez příplatku.
+</div>
 
-<!-- ================================= -->
-<!-- 6 -->
-<!-- ================================= -->
 
+
+<!-- =====================================================
+     6. VZOR
+     ===================================================== -->
 
 <h2>
 6. Vzor kolen a kapes
 </h2>
 
 
+<div class="pattern-box">
+
+
 <select id="pattern">
-
-
-<option>
-Bez konkrétního vzoru / dle domluvy
-</option>
-
-
-<option>
-Vzor 1 – doplnit
-</option>
-
-
-<option>
-Vzor 2 – doplnit
-</option>
-
-
-<option>
-Vzor 3 – doplnit
-</option>
-
-
 </select>
 
 
-<div class="help">
+<div
+  id="patternMessage"
+  class="help">
+</div>
 
-Vzor je bez příplatku.
+
+<div
+  id="patternPreview"
+  class="pattern-preview">
+
+
+<img
+  id="patternImage"
+  src=""
+  alt="Náhled vybraného vzoru">
+
+
+<div
+  id="patternPreviewName"
+  class="pattern-preview-name">
+</div>
+
+
+</div>
+
 
 </div>
 
 
 
-<!-- ================================= -->
-<!-- 7 -->
-<!-- ================================= -->
-
+<!-- =====================================================
+     7. REFLEX
+     ===================================================== -->
 
 <h2>
 7. Reflexní prvky
@@ -774,37 +777,27 @@ Vzor je bez příplatku.
 
 
 <option value="0">
-
 Bez reflexního prvku – 0 Kč
-
 </option>
 
 
 <option value="120">
-
 Kapsa + nohavice – 120 Kč
-
 </option>
 
 
 <option value="60">
-
 Kapsa – 60 Kč
-
 </option>
 
 
 <option value="60">
-
 Nohavice – 60 Kč
-
 </option>
 
 
 <option value="30">
-
 Jedna noha – 30 Kč
-
 </option>
 
 
@@ -822,10 +815,9 @@ Jedna noha = 30 Kč.
 
 
 
-<!-- ================================= -->
-<!-- 8 -->
-<!-- ================================= -->
-
+<!-- =====================================================
+     8. SEZÓNA
+     ===================================================== -->
 
 <h2>
 8. Materiál / sezóna
@@ -838,10 +830,10 @@ Jedna noha = 30 Kč.
 <label>
 
 <input
-type="radio"
-name="season"
-value="Jarní"
-checked
+  type="radio"
+  name="season"
+  value="Jarní"
+  checked
 >
 
 Jarní
@@ -852,9 +844,9 @@ Jarní
 <label>
 
 <input
-type="radio"
-name="season"
-value="Zimní"
+  type="radio"
+  name="season"
+  value="Zimní"
 >
 
 Zimní
@@ -866,17 +858,14 @@ Zimní
 
 
 <div class="help">
-
 Bez příplatku.
-
 </div>
 
 
 
-<!-- ================================= -->
-<!-- 9 -->
-<!-- ================================= -->
-
+<!-- =====================================================
+     9. DORUČENÍ
+     ===================================================== -->
 
 <h2>
 9. Doručení
@@ -887,16 +876,12 @@ Bez příplatku.
 
 
 <option value="89">
-
 Zásilkovna – 89 Kč
-
 </option>
 
 
 <option value="0">
-
 Osobně – zdarma
-
 </option>
 
 
@@ -904,17 +889,14 @@ Osobně – zdarma
 
 
 <div class="help">
-
 U osobního převzetí mohou zákazníci přijít osobně.
-
 </div>
 
 
 
-<!-- ================================= -->
-<!-- 10 -->
-<!-- ================================= -->
-
+<!-- =====================================================
+     10. KONTAKT
+     ===================================================== -->
 
 <h2>
 10. Kontaktní údaje
@@ -926,24 +908,21 @@ U osobního převzetí mohou zákazníci přijít osobně.
 
 <div>
 
-
 <label for="name">
 Jméno a příjmení *
 </label>
 
 
 <input
-id="name"
-autocomplete="name"
-required
+  id="name"
+  autocomplete="name"
+  required
 >
-
 
 </div>
 
 
 <div>
-
 
 <label for="phone">
 Telefon *
@@ -951,12 +930,11 @@ Telefon *
 
 
 <input
-id="phone"
-type="tel"
-autocomplete="tel"
-required
+  id="phone"
+  type="tel"
+  autocomplete="tel"
+  required
 >
-
 
 </div>
 
@@ -970,18 +948,17 @@ E-mail *
 
 
 <input
-id="email"
-type="email"
-autocomplete="email"
-required
+  id="email"
+  type="email"
+  autocomplete="email"
+  required
 >
 
 
 
-<!-- ================================= -->
-<!-- 11 -->
-<!-- ================================= -->
-
+<!-- =====================================================
+     11. POZNÁMKA
+     ===================================================== -->
 
 <h2>
 11. Poznámky a speciální úpravy
@@ -989,17 +966,16 @@ required
 
 
 <textarea
-id="note"
-rows="5"
-placeholder="Speciální úpravy, požadavky, místo osobního převzetí apod."
+  id="note"
+  rows="5"
+  placeholder="Speciální úpravy, požadavky, místo osobního převzetí apod."
 ></textarea>
 
 
 
-<!-- ================================= -->
-<!-- CENA -->
-<!-- ================================= -->
-
+<!-- =====================================================
+     CENA
+     ===================================================== -->
 
 <div class="summary">
 
@@ -1060,9 +1036,7 @@ CELKEM
 
 
 <button id="send">
-
 Odeslat objednávku
-
 </button>
 
 
@@ -1078,498 +1052,901 @@ Odeslat objednávku
 <script>
 
 
-/*
-==================================================
-GOOGLE APPS SCRIPT
-==================================================
-*/
+/* =====================================================
+   GOOGLE APPS SCRIPT
+   ===================================================== */
 
 const SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbzxKdwEplnIPizQsd3gBtGvZx-4xyNzBtwcNbeGAIRC7wCnPjcYEMNwceLbty57_12W/exec";
 
 
 
+/* =====================================================
+   VZORY
+   =====================================================
+
+   Obrázky musí být v GitHubu ve složce:
+
+   images/
+
+   a pojmenované takto:
+   
+   auta.jpg
+   lesni-zviratka.png
+   dino-male.png
+   grafity.png
+   hasici.jpg
+   liska.png
+   lvi.png
+
+   ===================================================== */
+
+
+const patternsBoy = [
+
+  {
+    name: "Auta",
+    image: "images/auta.jpg"
+  },
+
+  {
+    name: "Lesní zvířátka",
+    image: "images/lesni-zviratka.png"
+  },
+
+  {
+    name: "Dino malé",
+    image: "images/dino-male.png"
+  },
+
+  {
+    name: "Grafity",
+    image: "images/grafity.png"
+  },
+
+  {
+    name: "Hasiči",
+    image: "images/hasici.jpg"
+  },
+
+  {
+    name: "Liška",
+    image: "images/liska.png"
+  },
+
+  {
+    name: "Lvi",
+    image: "images/lvi.png"
+  }
+
+];
+
+
 /*
-==================================================
-RADIO BUTTON
-==================================================
+   Zatím nejsou v dokumentu označené vzory pro holky.
+   Jakmile je dodáš, doplníme je sem.
 */
+
+const patternsGirl = [];
+
+
+
+/* =====================================================
+   POHLAVÍ
+   ===================================================== */
 
 function selectedRadio(name) {
 
-return document.querySelector(
-'input[name="' + name + '"]:checked'
-).value;
+  const selected =
+    document.querySelector(
+      'input[name="' +
+      name +
+      '"]:checked'
+    );
+
+  return selected
+    ? selected.value
+    : "";
 
 }
 
 
 
-/*
-==================================================
-VÝPOČET CENY
-==================================================
-*/
+/* =====================================================
+   VYKRESLENÍ VZORŮ PODLE POHLAVÍ
+   ===================================================== */
 
-function calculate() {
+function updatePatterns() {
 
 
-const size =
-document.getElementById("size");
+  const sex =
+    selectedRadio("sex");
 
 
-const selectedSize =
-size.selectedOptions[0];
+  const select =
+    document.getElementById("pattern");
 
 
-const basePrice =
-Number(selectedSize.dataset.price);
+  const message =
+    document.getElementById("patternMessage");
 
 
-const reflectivePrice =
-Number(
-document.getElementById("reflective").value
-);
+  const preview =
+    document.getElementById("patternPreview");
 
 
-const quantity =
-Math.max(
-1,
-Number(
-document.getElementById("qty").value
-) || 1
-);
+  const image =
+    document.getElementById("patternImage");
 
 
-const shipping =
-Number(
-document.getElementById("delivery").value
-);
+  const previewName =
+    document.getElementById(
+      "patternPreviewName"
+    );
 
 
-const unitPrice =
-basePrice + reflectivePrice;
+  select.innerHTML = "";
 
-
-const total =
-unitPrice * quantity + shipping;
+  preview.style.display = "none";
 
 
 
-document.getElementById("unit").textContent =
-unitPrice.toLocaleString("cs-CZ") + " Kč";
+  let patterns;
 
 
-document.getElementById("qtySummary").textContent =
-quantity;
+  if (sex === "Kluk") {
+
+    patterns =
+      patternsBoy;
+
+    message.textContent =
+      "Vyberte vzor pro chlapce.";
+
+  }
+
+  else {
+
+    patterns =
+      patternsGirl;
+
+    message.textContent =
+      "Vzory pro holky budou doplněny.";
+
+  }
 
 
-document.getElementById("shipping").textContent =
-shipping.toLocaleString("cs-CZ") + " Kč";
+
+  if (patterns.length === 0) {
+
+    const option =
+      document.createElement("option");
+
+    option.textContent =
+      "Zatím nejsou k dispozici";
+
+    option.value = "";
+
+    select.appendChild(option);
+
+    return;
+
+  }
 
 
-document.getElementById("total").textContent =
-total.toLocaleString("cs-CZ") + " Kč";
+
+  patterns.forEach(
+    function(pattern, index) {
+
+
+      const option =
+        document.createElement("option");
+
+
+      option.value =
+        pattern.name;
+
+
+      option.dataset.image =
+        pattern.image;
+
+
+      option.textContent =
+        pattern.name;
+
+
+      if (index === 0) {
+
+        option.selected = true;
+
+      }
+
+
+      select.appendChild(option);
+
+    }
+  );
+
+
+  showPatternPreview();
 
 }
 
 
 
-/*
-==================================================
-BAREVNÝ ČTVEREČEK
-==================================================
-*/
+/* =====================================================
+   NÁHLED VZORU
+   ===================================================== */
+
+function showPatternPreview() {
+
+
+  const select =
+    document.getElementById("pattern");
+
+
+  const selected =
+    select.selectedOptions[0];
+
+
+  const preview =
+    document.getElementById("patternPreview");
+
+
+  const image =
+    document.getElementById("patternImage");
+
+
+  const name =
+    document.getElementById(
+      "patternPreviewName"
+    );
+
+
+  if (
+    !selected ||
+    !selected.dataset.image
+  ) {
+
+    preview.style.display =
+      "none";
+
+    return;
+
+  }
+
+
+  image.src =
+    selected.dataset.image;
+
+
+  image.alt =
+    "Vzor " +
+    selected.value;
+
+
+  name.textContent =
+    selected.value;
+
+
+  preview.style.display =
+    "block";
+
+}
+
+
+
+/* =====================================================
+   ZÁKLADNÍ BARVA
+   ===================================================== */
 
 function updateBaseColorSwatch() {
 
 
-const select =
-document.getElementById("baseColor");
+  const select =
+    document.getElementById(
+      "baseColor"
+    );
 
 
-const selected =
-select.selectedOptions[0];
+  const selected =
+    select.selectedOptions[0];
 
 
-const color =
-selected.dataset.color;
+  const color =
+    selected.dataset.color;
 
 
-const swatch =
-document.getElementById("baseColorSwatch");
-
-
-swatch.style.backgroundColor =
-color;
+  document
+    .getElementById(
+      "baseColorSwatch"
+    )
+    .style.backgroundColor =
+      color;
 
 }
 
 
 
+/* =====================================================
+   BARVA NÁPLETU
+   ===================================================== */
+
+function updateCuffColorSwatch() {
+
+
+  const select =
+    document.getElementById(
+      "cuffColor"
+    );
+
+
+  const selected =
+    select.selectedOptions[0];
+
+
+  const color =
+    selected.dataset.color;
+
+
+  document
+    .getElementById(
+      "cuffColorSwatch"
+    )
+    .style.backgroundColor =
+      color;
+
+}
+
+
+
+/* =====================================================
+   VÝPOČET CENY
+   ===================================================== */
+
+function calculate() {
+
+
+  const size =
+    document.getElementById(
+      "size"
+    );
+
+
+  const selectedSize =
+    size.selectedOptions[0];
+
+
+  const basePrice =
+    Number(
+      selectedSize.dataset.price
+    );
+
+
+  const reflectivePrice =
+    Number(
+      document.getElementById(
+        "reflective"
+      ).value
+    );
+
+
+  const quantity =
+    Math.max(
+      1,
+      Number(
+        document.getElementById(
+          "qty"
+        ).value
+      ) || 1
+    );
+
+
+  const shipping =
+    Number(
+      document.getElementById(
+        "delivery"
+      ).value
+    );
+
+
+  const unitPrice =
+    basePrice +
+    reflectivePrice;
+
+
+  const total =
+    unitPrice *
+    quantity +
+    shipping;
+
+
+
+  document.getElementById(
+    "unit"
+  ).textContent =
+    unitPrice.toLocaleString(
+      "cs-CZ"
+    ) +
+    " Kč";
+
+
+  document.getElementById(
+    "qtySummary"
+  ).textContent =
+    quantity;
+
+
+  document.getElementById(
+    "shipping"
+  ).textContent =
+    shipping.toLocaleString(
+      "cs-CZ"
+    ) +
+    " Kč";
+
+
+  document.getElementById(
+    "total"
+  ).textContent =
+    total.toLocaleString(
+      "cs-CZ"
+    ) +
+    " Kč";
+
+}
+
+
+
+/* =====================================================
+   ZMĚNA POHLAVÍ
+   ===================================================== */
+
 document
-.getElementById("baseColor")
-.addEventListener(
-"change",
-updateBaseColorSwatch
+  .querySelectorAll(
+    'input[name="sex"]'
+  )
+  .forEach(
+    function(radio) {
+
+      radio.addEventListener(
+        "change",
+        updatePatterns
+      );
+
+    }
+  );
+
+
+
+/* =====================================================
+   ZMĚNA VZORU
+   ===================================================== */
+
+document
+  .getElementById(
+    "pattern"
+  )
+  .addEventListener(
+    "change",
+    showPatternPreview
+  );
+
+
+
+/* =====================================================
+   BARVY
+   ===================================================== */
+
+document
+  .getElementById(
+    "baseColor"
+  )
+  .addEventListener(
+    "change",
+    updateBaseColorSwatch
+  );
+
+
+document
+  .getElementById(
+    "cuffColor"
+  )
+  .addEventListener(
+    "change",
+    updateCuffColorSwatch
+  );
+
+
+
+/* =====================================================
+   CENA
+   ===================================================== */
+
+[
+  "size",
+  "qty",
+  "reflective",
+  "delivery"
+].forEach(
+  function(id) {
+
+
+    document
+      .getElementById(id)
+      .addEventListener(
+        "input",
+        calculate
+      );
+
+
+    document
+      .getElementById(id)
+      .addEventListener(
+        "change",
+        calculate
+      );
+
+  }
 );
 
+
+
+/* =====================================================
+   PRVNÍ NAČTENÍ
+   ===================================================== */
 
 updateBaseColorSwatch();
 
+updateCuffColorSwatch();
 
-
-/*
-==================================================
-AKTUALIZACE CENY
-==================================================
-*/
-
-[
-"size",
-"qty",
-"reflective",
-"delivery"
-].forEach(function(id) {
-
-
-document
-.getElementById(id)
-.addEventListener(
-"input",
-calculate
-);
-
-
-document
-.getElementById(id)
-.addEventListener(
-"change",
-calculate
-);
-
-});
-
+updatePatterns();
 
 calculate();
 
 
 
-/*
-==================================================
-ODESLÁNÍ OBJEDNÁVKY
-==================================================
-*/
+/* =====================================================
+   ODESLÁNÍ OBJEDNÁVKY
+   ===================================================== */
 
 document
-.getElementById("send")
-.addEventListener(
-"click",
-async function() {
+  .getElementById("send")
+  .addEventListener(
+    "click",
+    async function() {
 
 
-const msg =
-document.getElementById("msg");
+      const msg =
+        document.getElementById(
+          "msg"
+        );
 
 
-msg.style.display =
-"none";
+      msg.style.display =
+        "none";
 
 
 
-/*
-KONTAKT
-*/
+      /* KONTAKT */
 
 
-const name =
-document
-.getElementById("name")
-.value
-.trim();
+      const name =
+        document
+          .getElementById("name")
+          .value
+          .trim();
 
 
-const phone =
-document
-.getElementById("phone")
-.value
-.trim();
+      const phone =
+        document
+          .getElementById("phone")
+          .value
+          .trim();
 
 
-const email =
-document
-.getElementById("email")
-.value
-.trim();
+      const email =
+        document
+          .getElementById("email")
+          .value
+          .trim();
 
 
 
-if (
-!name ||
-!phone ||
-!email
-) {
+      if (
+        !name ||
+        !phone ||
+        !email
+      ) {
 
 
-msg.className =
-"err";
+        msg.className =
+          "err";
 
 
-msg.textContent =
-"Vyplňte prosím jméno, telefon a e-mail.";
+        msg.textContent =
+          "Vyplňte prosím jméno, telefon a e-mail.";
 
 
-msg.style.display =
-"block";
+        msg.style.display =
+          "block";
 
 
-return;
+        return;
 
-}
+      }
 
 
 
-/*
-CENA
-*/
+      /* CENA */
 
 
-const size =
-document.getElementById("size");
+      const size =
+        document.getElementById(
+          "size"
+        );
 
 
-const selectedSize =
-size.selectedOptions[0];
+      const selectedSize =
+        size.selectedOptions[0];
 
 
-const basePrice =
-Number(
-selectedSize.dataset.price
-);
+      const basePrice =
+        Number(
+          selectedSize.dataset.price
+        );
 
 
-const reflectivePrice =
-Number(
-document.getElementById("reflective").value
-);
+      const reflectivePrice =
+        Number(
+          document.getElementById(
+            "reflective"
+          ).value
+        );
 
 
-const quantity =
-Math.max(
-1,
-Number(
-document.getElementById("qty").value
-) || 1
-);
+      const quantity =
+        Math.max(
+          1,
+          Number(
+            document.getElementById(
+              "qty"
+            ).value
+          ) || 1
+        );
 
 
-const shipping =
-Number(
-document.getElementById("delivery").value
-);
+      const shipping =
+        Number(
+          document.getElementById(
+            "delivery"
+          ).value
+        );
 
 
-const unitPrice =
-basePrice +
-reflectivePrice;
+      const unitPrice =
+        basePrice +
+        reflectivePrice;
 
 
-const total =
-unitPrice *
-quantity +
-shipping;
+      const total =
+        unitPrice *
+        quantity +
+        shipping;
 
 
 
-/*
-DATA OBJEDNÁVKY
-*/
+      /* DATA OBJEDNÁVKY */
 
 
-const data = {
+      const patternSelect =
+        document.getElementById(
+          "pattern"
+        );
 
 
-sex:
-selectedRadio("sex"),
+      const selectedPattern =
+        patternSelect.selectedOptions[0];
 
 
-size:
-selectedSize.value,
+      const data = {
 
 
-basePrice:
-basePrice,
+        sex:
+          selectedRadio("sex"),
 
 
-variant:
-document
-.getElementById("variant")
-.value,
+        size:
+          selectedSize.value,
 
 
-baseColor:
-document
-.getElementById("baseColor")
-.value,
+        basePrice:
+          basePrice,
 
 
-cuffColor:
-document
-.getElementById("cuffColor")
-.value,
+        variant:
+          document
+            .getElementById(
+              "variant"
+            )
+            .value,
 
 
-pattern:
-document
-.getElementById("pattern")
-.value,
+        baseColor:
+          document
+            .getElementById(
+              "baseColor"
+            )
+            .value,
 
 
-reflective:
-document
-.getElementById("reflective")
-.selectedOptions[0]
-.text,
+        cuffColor:
+          document
+            .getElementById(
+              "cuffColor"
+            )
+            .value,
 
 
-reflectivePrice:
-reflectivePrice,
+        pattern:
+          selectedPattern
+            ? selectedPattern.value
+            : "",
 
 
-season:
-selectedRadio("season"),
+        reflective:
+          document
+            .getElementById(
+              "reflective"
+            )
+            .selectedOptions[0]
+            .text,
 
 
-delivery:
-document
-.getElementById("delivery")
-.selectedOptions[0]
-.text,
+        reflectivePrice:
+          reflectivePrice,
 
 
-shipping:
-shipping,
+        season:
+          selectedRadio(
+            "season"
+          ),
 
 
-quantity:
-quantity,
+        delivery:
+          document
+            .getElementById(
+              "delivery"
+            )
+            .selectedOptions[0]
+            .text,
 
 
-unitPrice:
-unitPrice,
+        shipping:
+          shipping,
 
 
-total:
-total,
+        quantity:
+          quantity,
 
 
-name:
-name,
+        unitPrice:
+          unitPrice,
 
 
-phone:
-phone,
+        total:
+          total,
 
 
-email:
-email,
+        name:
+          name,
 
 
-note:
-document
-.getElementById("note")
-.value
-.trim()
+        phone:
+          phone,
 
-};
 
+        email:
+          email,
 
 
-/*
-ODESLÁNÍ
-*/
+        note:
+          document
+            .getElementById(
+              "note"
+            )
+            .value
+            .trim()
 
+      };
 
-const button =
-document.getElementById("send");
 
 
-button.disabled =
-true;
+      /* ODESLÁNÍ */
 
 
-button.textContent =
-"Odesílám…";
+      const button =
+        document.getElementById(
+          "send"
+        );
 
 
+      button.disabled =
+        true;
 
-try {
 
+      button.textContent =
+        "Odesílám…";
 
-await fetch(
-SCRIPT_URL,
-{
 
-method:
-"POST",
 
-mode:
-"no-cors",
+      try {
 
-headers:
-{
-"Content-Type":
-"text/plain;charset=utf-8"
-},
 
-body:
-JSON.stringify(data)
+        await fetch(
+          SCRIPT_URL,
+          {
 
-}
-);
+            method:
+              "POST",
 
+            mode:
+              "no-cors",
 
-msg.className =
-"ok";
+            headers:
+              {
+                "Content-Type":
+                  "text/plain;charset=utf-8"
+              },
 
+            body:
+              JSON.stringify(data)
 
-msg.textContent =
-"Objednávka byla odeslána. Děkujeme!";
+          }
+        );
 
 
-msg.style.display =
-"block";
+        msg.className =
+          "ok";
 
 
-}
+        msg.textContent =
+          "Objednávka byla odeslána. Děkujeme!";
 
 
-catch(error) {
+        msg.style.display =
+          "block";
 
 
-msg.className =
-"err";
+      }
 
 
-msg.textContent =
-"Objednávku se nepodařilo odeslat. Zkuste to prosím znovu.";
+      catch(error) {
 
 
-msg.style.display =
-"block";
+        msg.className =
+          "err";
 
-}
 
+        msg.textContent =
+          "Objednávku se nepodařilo odeslat. Zkuste to prosím znovu.";
 
-button.disabled =
-false;
 
+        msg.style.display =
+          "block";
 
-button.textContent =
-"Odeslat objednávku";
+      }
 
 
-});
+      button.disabled =
+        false;
+
+
+      button.textContent =
+        "Odeslat objednávku";
+
+
+    }
+  );
 
 </script>
 
